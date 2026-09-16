@@ -236,6 +236,11 @@ function initProjectsGrid() {
 }
 
 // ---------- Validación del formulario de contacto ----------
+// Endpoint: URL de la App Web de Google Apps Script (ver apps-script-contact.gs).
+// Pega aquí la URL de tu implementación, por ejemplo:
+// 'https://script.google.com/macros/s/AKfycb...XXXX/exec'
+const CONTACT_ENDPOINT = 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT';
+
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -295,8 +300,14 @@ function initContactForm() {
     status.textContent = 'Enviando mensaje...';
     status.className = 'form-status';
 
+    if (!CONTACT_ENDPOINT || CONTACT_ENDPOINT.indexOf('PEGA_AQUI') !== -1) {
+      status.textContent = 'El formulario aún no está configurado. Escríbeme a enzolatorrech18@gmail.com.';
+      status.className = 'form-status error';
+      return;
+    }
+
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: 'POST',
         headers: { Accept: 'application/json' },
         body: new FormData(form),
