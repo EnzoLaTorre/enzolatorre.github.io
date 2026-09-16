@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initTechGrid();
   initProjectsGrid();
-  initContactForm();
   initReveal();
 });
 
@@ -233,104 +232,6 @@ function initProjectsGrid() {
       `;
     })
     .join('');
-}
-
-// ---------- Validación del formulario de contacto ----------
-// Endpoint: URL de la App Web de Google Apps Script (ver apps-script-contact.gs).
-// Pega aquí la URL de tu implementación, por ejemplo:
-// 'https://script.google.com/macros/s/AKfycb...XXXX/exec'
-const CONTACT_ENDPOINT = 'PEGA_AQUI_TU_URL_DE_APPS_SCRIPT';
-
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  const status = document.getElementById('formStatus');
-
-  const validators = {
-    name: (value) => (value.trim().length >= 2 ? '' : 'Ingresa tu nombre (mínimo 2 caracteres).'),
-    email: (value) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()) ? '' : 'Ingresa un email válido.'),
-    message: (value) => (value.trim().length >= 10 ? '' : 'El mensaje debe tener al menos 10 caracteres.'),
-  };
-
-  const setFieldState = (field, errorEl, error) => {
-    const wrapper = field.closest('.form-field');
-    wrapper.classList.toggle('invalid', Boolean(error));
-    errorEl.textContent = error;
-  };
-
-  const validateField = (field, name) => {
-    const errorEl = form.querySelector(`[data-error-for="${name}"]`);
-    const error = validators[name](field.value);
-    setFieldState(field, errorEl, error);
-    return !error;
-  };
-
-  Object.keys(validators).forEach((name) => {
-    const field = form.querySelector(`[name="${name}"]`);
-    if (field) {
-      field.addEventListener('blur', () => validateField(field, name));
-      field.addEventListener('input', () => {
-        if (field.closest('.form-field').classList.contains('invalid')) {
-          validateField(field, name);
-        }
-      });
-    }
-  });
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    let allValid = true;
-    Object.keys(validators).forEach((name) => {
-      const field = form.querySelector(`[name="${name}"]`);
-      if (field && !validateField(field, name)) allValid = false;
-    });
-
-    if (!allValid) {
-      status.textContent = 'Revisa los campos marcados en rojo.';
-      status.className = 'form-status error';
-      return;
-    }
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalLabel = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Enviando...';
-    status.textContent = 'Enviando mensaje...';
-    status.className = 'form-status';
-
-    if (!CONTACT_ENDPOINT || CONTACT_ENDPOINT.indexOf('PEGA_AQUI') !== -1) {
-      status.textContent = 'El formulario aún no está configurado. Escríbeme a enzolatorrech18@gmail.com.';
-      status.className = 'form-status error';
-      return;
-    }
-
-    try {
-      const res = await fetch(CONTACT_ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
-      });
-
-      if (res.ok) {
-        status.textContent = '✅ ¡Mensaje enviado! Te responderé pronto.';
-        status.className = 'form-status success';
-        form.reset();
-      } else {
-        const data = await res.json().catch(() => ({}));
-        const errors = data.errors ? data.errors.map((err) => err.message).join(' ') : '';
-        status.textContent = errors || 'No se pudo enviar. Escríbeme a enzolatorrech18@gmail.com.';
-        status.className = 'form-status error';
-      }
-    } catch {
-      status.textContent = 'Sin conexión. Escríbeme directamente a enzolatorrech18@gmail.com.';
-      status.className = 'form-status error';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
-    }
-  });
 }
 
 // ---------- Animación de aparición al hacer scroll ----------
