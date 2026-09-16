@@ -273,7 +273,9 @@ function initContactForm() {
     }
   });
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
     let allValid = true;
     Object.keys(validators).forEach((name) => {
       const field = form.querySelector(`[name="${name}"]`);
@@ -281,14 +283,42 @@ function initContactForm() {
     });
 
     if (!allValid) {
-      e.preventDefault();
       status.textContent = 'Revisa los campos marcados en rojo.';
       status.className = 'form-status error';
       return;
     }
 
-    status.textContent = 'Enviando...';
-    status.className = 'form-status success';
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+    status.textContent = 'Enviando mensaje...';
+    status.className = 'form-status';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        status.textContent = '✅ ¡Mensaje enviado! Te responderé pronto.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        const errors = data.errors ? data.errors.map((err) => err.message).join(' ') : '';
+        status.textContent = errors || 'No se pudo enviar. Escríbeme a enzolatorrech18@gmail.com.';
+        status.className = 'form-status error';
+      }
+    } catch {
+      status.textContent = 'Sin conexión. Escríbeme directamente a enzolatorrech18@gmail.com.';
+      status.className = 'form-status error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
   });
 }
 
