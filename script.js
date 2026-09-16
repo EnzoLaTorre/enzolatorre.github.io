@@ -274,8 +274,6 @@ function initContactForm() {
   });
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
     let allValid = true;
     Object.keys(validators).forEach((name) => {
       const field = form.querySelector(`[name="${name}"]`);
@@ -283,14 +281,14 @@ function initContactForm() {
     });
 
     if (!allValid) {
+      e.preventDefault();
       status.textContent = 'Revisa los campos marcados en rojo.';
       status.className = 'form-status error';
       return;
     }
 
-    status.textContent = '✅ ¡Mensaje simulado enviado! Conecta un servicio como FormSubmit/Formspree para envíos reales.';
+    status.textContent = 'Enviando...';
     status.className = 'form-status success';
-    form.reset();
   });
 }
 
