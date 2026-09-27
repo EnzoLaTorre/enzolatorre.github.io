@@ -21,28 +21,6 @@ window.PROJECTS_DATA = {
     neon: 'linear-gradient(135deg, #38bdf8, #818cf8, #d946ef)',
   },
 
-  // Lista de proyectos:
-  projects: [
-    {
-      title: 'RAG SaaS · Chat con tus documentos',
-      description:
-        'SaaS multitenant de RAG: sube PDF/DOCX/TXT y haz preguntas con respuestas en streaming y citas verificables. Python, FastAPI, ChromaDB y OpenAI.',
-      tags: ['Python', 'FastAPI', 'OpenAI', 'ChromaDB', 'React', 'TypeScript'],
-      demoUrl: '#',
-      repoUrl: 'https://github.com/EnzoLaTorre/rag-saas',
-      image: '',
-      gradient: 'sunset',
-    },
-    {
-      title: 'Detección de fraude en tarjetas de crédito',
-      description:
-        'ML sobre 284k transacciones: EDA, balanceo con SMOTE, comparación de modelos (Logistic Regression, Random Forest, XGBoost) y ajuste del umbral de decisión. Incluye un dashboard interactivo en Streamlit para subir datos y ver predicciones, métricas y el impacto económico del umbral.',
-      tags: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'Machine Learning', 'Streamlit'],
-      demoUrl: 'https://fraud-detection-l9fzuu2wdfk3rj8ewfjj63.streamlit.app/',
-      repoUrl: 'https://github.com/EnzoLaTorre/fraud-detection',
-      notebookUrl: 'https://nbviewer.org/github/EnzoLaTorre/fraud-detection/blob/main/notebooks/fraud_analysis.ipynb',
-      image: 'imagenes/fraude-dashboard-v2.png',
-      gradient: 'ocean',
-    },
-  ],
+  // Lista de proyectos (en reconstrucción — definiendo el enfoque profesional):
+  projects: [],
 };

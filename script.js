@@ -141,7 +141,14 @@ const TECH_ICONS = {
   chromadb: 'icon-code',
 };
 
-const BASE_TECH = [];
+const BASE_TECH = [
+  { name: 'Python', icon: 'icon-python' },
+  { name: 'SQL', icon: 'icon-sql' },
+  { name: 'FastAPI', icon: 'icon-code' },
+  { name: 'TypeScript', icon: 'icon-typescript' },
+  { name: 'React', icon: 'icon-code' },
+  { name: 'Git & GitHub', icon: 'icon-git' },
+];
 
 function initTechGrid() {
   const grid = document.getElementById('techGrid');
@@ -185,7 +192,16 @@ function initProjectsGrid() {
   const grid = document.getElementById('projectsGrid');
   const data = window.PROJECTS_DATA;
 
-  if (!grid || !data || !data.projects.length) return;
+  if (!grid || !data) return;
+
+  if (!data.projects.length) {
+    grid.innerHTML = `
+      <div class="projects-empty">
+        <p class="projects-empty__title">En construcción</p>
+        <p class="projects-empty__sub">Estoy definiendo mi enfoque profesional. Los próximos proyectos aparecerán acá.</p>
+      </div>`;
+    return;
+  }
 
   const fallback = 'linear-gradient(135deg, #38bdf8, #818cf8, #d946ef)';
   const styleThumb = (p) => {

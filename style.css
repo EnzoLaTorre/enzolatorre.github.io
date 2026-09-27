@@ -1208,3 +1208,25 @@ body {
     width: 100%;
   }
 }
+
+.projects-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 56px 24px;
+  border: 2px dashed color-mix(in srgb, var(--text-muted) 35%, transparent);
+  border-radius: 16px;
+  background: var(--bg-card);
+}
+
+.projects-empty__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.projects-empty__sub {
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
