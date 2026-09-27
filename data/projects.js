@@ -24,16 +24,6 @@ window.PROJECTS_DATA = {
   // Lista de proyectos:
   projects: [
     {
-      title: 'Mini-ERP · Gestión de negocio (full-stack)',
-      description:
-        'Sistema ERP completo: clientes, productos, stock, movimientos y facturación con estado de pago e impresión. Panel con KPIs y gráficos (ECharts), autenticación JWT por roles, app en español/inglés y API con tests automatizados (Vitest + Supertest) y CI con GitHub Actions.',
-      tags: ['Vue 3', 'Vuetify', 'TypeScript', 'Express', 'SQLite', 'JWT', 'ECharts', 'Vitest'],
-      demoUrl: '#',
-      repoUrl: 'https://github.com/EnzoLaTorre/mini-erp',
-      image: 'imagenes/mini-erp-dashboard.png',
-      gradient: '',
-    },
-    {
       title: 'RAG SaaS · Chat con tus documentos',
       description:
         'SaaS multitenant de RAG: sube PDF/DOCX/TXT y haz preguntas con respuestas en streaming y citas verificables. Python, FastAPI, ChromaDB y OpenAI.',
