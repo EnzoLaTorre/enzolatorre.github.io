@@ -139,6 +139,11 @@ const TECH_ICONS = {
   react: 'icon-code',
   openai: 'icon-code',
   chromadb: 'icon-code',
+  node: 'icon-node',
+  express: 'icon-express',
+  vue: 'icon-vue',
+  sqlite: 'icon-sql',
+  'ci/cd': 'icon-git',
 };
 
 const BASE_TECH = [

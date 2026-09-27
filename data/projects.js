@@ -21,6 +21,16 @@ window.PROJECTS_DATA = {
     neon: 'linear-gradient(135deg, #38bdf8, #818cf8, #d946ef)',
   },
 
-  // Lista de proyectos (en reconstrucción — definiendo el enfoque profesional):
-  projects: [],
+  // Lista de proyectos:
+  projects: [
+    {
+      title: 'Mini-ERP · Facturación',
+      description:
+        'ERP de facturación full-stack: API REST en Express + TypeORM, frontend Vue 3 con autenticación JWT, dashboard con gráficos y facturas descargables en PDF. Testing con Vitest, CI/CD en GitHub Actions y despliegue en Render.',
+      tags: ['TypeScript', 'Vue 3', 'Express', 'SQLite', 'Testing', 'CI/CD'],
+      demoUrl: 'https://mini-erp-api-3m0r.onrender.com',
+      repoUrl: 'https://github.com/EnzoLaTorre/mini-erp',
+      gradient: 'ocean',
+    },
+  ],
 };
