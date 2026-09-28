@@ -62,7 +62,7 @@ function initTyping() {
   const el = document.getElementById('typeWriter');
   if (!el) return;
 
-  const roles = ['Estudiante de Ciencia de Datos', 'Python + FastAPI', 'RAG · IA Aplicada', 'OpenAI + ChromaDB', 'TECSUP'];
+  const roles = ['Estudiante de Big Data y Ciencia de Datos', 'Python · SQL · ETL', 'Data Engineering', 'Modelado de datos', 'TECSUP'];
   let roleIndex = 0;
   let charIndex = 0;
   let deleting = false;
@@ -132,26 +132,28 @@ const TECH_ICONS = {
   js: 'icon-js',
   typescript: 'icon-typescript',
   ts: 'icon-typescript',
-  python: 'icon-python',
-  poo: 'icon-oop',
-  oop: 'icon-oop',
-  fastapi: 'icon-code',
-  react: 'icon-code',
-  openai: 'icon-code',
-  chromadb: 'icon-code',
+  vue: 'icon-vue',
   node: 'icon-node',
   express: 'icon-express',
-  vue: 'icon-vue',
+  python: 'icon-python',
+  pandas: 'icon-table',
+  etl: 'icon-code',
+  dbt: 'icon-code',
+  streamlit: 'icon-chart',
+  sql: 'icon-sql',
+  'sql server': 'icon-sql',
+  sqlserver: 'icon-sql',
   sqlite: 'icon-sql',
+  'poo': 'icon-oop',
+  oop: 'icon-oop',
   'ci/cd': 'icon-git',
+  'control de versiones': 'icon-git',
 };
 
 const BASE_TECH = [
   { name: 'Python', icon: 'icon-python' },
   { name: 'SQL', icon: 'icon-sql' },
-  { name: 'FastAPI', icon: 'icon-code' },
-  { name: 'TypeScript', icon: 'icon-typescript' },
-  { name: 'React', icon: 'icon-code' },
+  { name: 'SQL Server', icon: 'icon-sql' },
   { name: 'Git & GitHub', icon: 'icon-git' },
 ];
 
@@ -203,7 +205,12 @@ function initProjectsGrid() {
     grid.innerHTML = `
       <div class="projects-empty">
         <p class="projects-empty__title">En construcción</p>
-        <p class="projects-empty__sub">Estoy definiendo mi enfoque profesional. Los próximos proyectos aparecerán acá.</p>
+        <p class="projects-empty__sub">
+          Publico cada proyecto como repositorio abierto, con su documentación y sus
+          pruebas, para que cualquiera pueda reproducirlo. Mientras tanto puedes
+          seguir mi avance en
+          <a href="https://github.com/EnzoLaTorre" target="_blank" rel="noopener noreferrer">GitHub ↗</a>.
+        </p>
       </div>`;
     return;
   }
