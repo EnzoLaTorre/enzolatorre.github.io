@@ -31,9 +31,9 @@ window.PROJECTS_DATA = {
       gradient: 'salud',
     },
     {
-      title: 'Fraude en tarjetas: 104 de 142, y por qué la accuracy no sirve',
+      title: 'Fraude en tarjetas: 103 de 142, y por qué la accuracy no sirve',
       description:
-        'Detección de fraude con un desbalance extremo: solo el 0,17% de las transacciones es fraude, así que un modelo que diga "todo normal" sacaría 99,83% de accuracy sin detectar un solo fraude. Compara Logistic Regression, Random Forest y XGBoost con y sin SMOTE, midiendo recall, precisión y F1. El mejor modelo atrapa 104 de 142 fraudes con 3 falsas alarmas, y un barrido de umbrales muestra que elegir dónde cortar es una decisión de negocio, no del modelo.',
+        'Detección de fraude con un desbalance extremo: solo el 0,17% de las transacciones es fraude, así que un modelo que diga "todo normal" sacaría 99,83% de accuracy sin detectar un solo fraude. Compara Logistic Regression, Random Forest y XGBoost con y sin SMOTE, midiendo recall, precisión y F1. El mejor modelo detecta 103 de 142 fraudes con 6 falsas alarmas, y el umbral se elige sobre un conjunto de validación, no sobre test, para que las métricas no queden infladas. El barrido de umbrales muestra que elegir dónde cortar es una decisión de negocio, no del modelo.',
       tags: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'matplotlib', 'seaborn', 'Streamlit', 'imbalanced-learn'],
       repoUrl: 'https://github.com/EnzoLaTorre/fraud-detection',
       notebookUrl: 'https://github.com/EnzoLaTorre/fraud-detection/blob/main/notebooks/fraud_analysis.ipynb',
