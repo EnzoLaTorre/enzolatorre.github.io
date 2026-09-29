@@ -23,7 +23,7 @@ window.PROJECTS_DATA = {
     {
       title: 'Atenciones del SIS: de 74,6M de filas a un modelo estrella',
       description:
-        'Pipeline ETL en Python sobre las atenciones del SIS (2017-2025): procesa 74,6 millones de filas crudas y las agrega a 2,6 millones en un modelo estrella en SQL Server, que reconcilian con 665,7 millones de atenciones. El 81,4% se resuelve en primer nivel, apenas por encima del 70-80% que el MinSa considera alcanzable en ese nivel.',
+        'Pipeline ETL en Python sobre las atenciones del SIS (2017-2025): procesa 74,6 millones de filas crudas y las agrega a 2,6 millones en un modelo estrella en SQL Server, que reconcilian con 665,7 millones de atenciones. El 81,4% se registra en primer nivel, cifra que no equivale a la del MinSa (70-80% de necesidades resueltas localmente): el SIS registra a dónde acude la gente, no qué se resolvió.',
       tags: ['Python', 'pandas', 'SQL Server', 'SQLAlchemy', 'Parquet', 'Streamlit', 'Altair', 'pytest'],
       repoUrl: 'https://github.com/EnzoLaTorre/pipeline-atenciones-sis',
       demoUrl: 'https://pipeline-atenciones-sis.onrender.com',
