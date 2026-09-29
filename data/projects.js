@@ -17,6 +17,7 @@ window.PROJECTS_DATA = {
   gradients: {
     salud: 'linear-gradient(135deg, #0ea5e9 0%, #2563eb 45%, #1e3a8a 100%)',
     datos: 'linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #d946ef 100%)',
+    fraude: 'linear-gradient(135deg, #d7263d 0%, #b5175e 45%, #6a1b3a 100%)',
   },
 
   projects: [
@@ -28,6 +29,15 @@ window.PROJECTS_DATA = {
       repoUrl: 'https://github.com/EnzoLaTorre/pipeline-atenciones-sis',
       demoUrl: 'https://pipeline-atenciones-sis.onrender.com',
       gradient: 'salud',
+    },
+    {
+      title: 'Fraude en tarjetas: 104 de 142, y por qué la accuracy no sirve',
+      description:
+        'Detección de fraude con un desbalance extremo: solo el 0,17% de las transacciones es fraude, así que un modelo que diga "todo normal" sacaría 99,83% de accuracy sin detectar un solo fraude. Compara Logistic Regression, Random Forest y XGBoost con y sin SMOTE, midiendo recall, precisión y F1. El mejor modelo atrapa 104 de 142 fraudes con 3 falsas alarmas, y un barrido de umbrales muestra que elegir dónde cortar es una decisión de negocio, no del modelo.',
+      tags: ['Python', 'pandas', 'scikit-learn', 'XGBoost', 'matplotlib', 'seaborn', 'Streamlit', 'imbalanced-learn'],
+      repoUrl: 'https://github.com/EnzoLaTorre/fraud-detection',
+      notebookUrl: 'https://github.com/EnzoLaTorre/fraud-detection/blob/main/notebooks/fraud_analysis.ipynb',
+      gradient: 'fraude',
     },
   ],
 };
