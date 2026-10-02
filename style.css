@@ -800,6 +800,24 @@ body {
   backdrop-filter: blur(6px);
 }
 
+/* En pantallas tactiles no hay hover, asi que el overlay se queda en opacity 0
+   y los enlaces "Demo / Notebook / Codigo" quedan invisibles para siempre: se
+   tocaba la tarjeta y no pasaba nada. En (hover: none) los enlaces se muestran
+   siempre, apoyados abajo para no tapar el dashboard de la captura. */
+@media (hover: none) {
+  .project-overlay {
+    opacity: 1;
+    align-items: flex-end;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(7, 11, 20, 0.82), transparent 72%);
+  }
+
+  .overlay-btn {
+    padding: 11px 16px;
+    font-size: 0.8rem;
+  }
+}
+
 .project-body {
   padding: 24px;
   display: flex;
