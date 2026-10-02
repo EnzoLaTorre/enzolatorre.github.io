@@ -254,8 +254,11 @@ function initProjectsGrid() {
         : '';
       // placeholder-thumb anima background-position (gradientShift). Con una
       // captura eso hace que la imagen derive de lado a lado, asi que la
-      // clase solo se aplica cuando no hay imagen.
-      const thumbClass = p.image ? 'project-thumb' : 'project-thumb placeholder-thumb';
+      // clase solo se aplica cuando no hay imagen. Con imagen se agrega el
+      // modificador que atenua el velo, para que el dashboard se lea.
+      const thumbClass = p.image
+        ? 'project-thumb project-thumb--foto'
+        : 'project-thumb placeholder-thumb';
       return `
         <article class="project-card">
           <div class="${thumbClass}" ${styleThumb(p)}>
