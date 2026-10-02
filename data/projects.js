@@ -28,6 +28,7 @@ window.PROJECTS_DATA = {
       tags: ['Python', 'pandas', 'SQL Server', 'SQLAlchemy', 'Parquet', 'Streamlit', 'Altair', 'pytest'],
       repoUrl: 'https://github.com/EnzoLaTorre/pipeline-atenciones-sis',
       demoUrl: 'https://pipeline-atenciones-sis.onrender.com',
+      image: 'assets/sis-dashboard.webp',
       gradient: 'salud',
     },
     {
@@ -38,6 +39,7 @@ window.PROJECTS_DATA = {
       repoUrl: 'https://github.com/EnzoLaTorre/fraud-detection',
       demoUrl: 'https://fraud-detection-txng.onrender.com',
       notebookUrl: 'https://github.com/EnzoLaTorre/fraud-detection/blob/main/notebooks/fraud_analysis.ipynb',
+      image: 'assets/fraude-dashboard.webp',
       gradient: 'fraude',
     },
   ],

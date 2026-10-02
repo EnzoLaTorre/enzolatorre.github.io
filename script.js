@@ -252,9 +252,13 @@ function initProjectsGrid() {
             </div>
           `
         : '';
+      // placeholder-thumb anima background-position (gradientShift). Con una
+      // captura eso hace que la imagen derive de lado a lado, asi que la
+      // clase solo se aplica cuando no hay imagen.
+      const thumbClass = p.image ? 'project-thumb' : 'project-thumb placeholder-thumb';
       return `
         <article class="project-card">
-          <div class="project-thumb placeholder-thumb" ${styleThumb(p)}>
+          <div class="${thumbClass}" ${styleThumb(p)}>
             ${overlayLinks}
           </div>
           <div class="project-body">
