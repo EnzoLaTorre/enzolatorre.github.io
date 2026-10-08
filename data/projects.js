@@ -30,5 +30,23 @@ window.PROJECTS_DATA = {
       image: 'assets/sis-dashboard.webp',
       gradient: 'salud',
     },
+      {
+        title: 'MEPOOL · Gestor de Tareas',
+        description:
+          'App web para gestionar tareas con JavaScript puro aplicando POO: clases, herencia, filtros, búsqueda, ordenamiento, drag & drop, vencimientos, modo oscuro/claro y persistencia en localStorage.',
+        tags: ['HTML5', 'CSS3', 'JavaScript', 'localStorage', 'POO'],
+        repoUrl: 'https://github.com/EnzoLaTorre/gestor-tareas',
+        image: 'assets/meepool-dashboard.webp',
+        gradient: 'web',
+      },
+      {
+        title: 'RAG SaaS — Chat con tus documentos',
+        description:
+          'Aplicación multi-tenant que indexa PDF, DOCX, TXT y responde con citas/fuentes usando RAG. Backend FastAPI + ChromaDB + OpenAI; frontend React + Vite + TypeScript.',
+        tags: ['Python', 'FastAPI', 'SQLModel', 'ChromaDB', 'OpenAI', 'React', 'TypeScript', 'Vite', 'JWT', 'bcrypt'],
+        repoUrl: 'https://github.com/EnzoLaTorre/rag-saas',
+        image: 'assets/rag-saas-dashboard.webp',
+        gradient: 'ia',
+      },
   ],
 };
