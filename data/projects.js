@@ -45,7 +45,7 @@ window.PROJECTS_DATA = {
           'Aplicación multi-tenant que indexa PDF, DOCX, TXT y responde con citas/fuentes usando RAG. Backend FastAPI + ChromaDB + OpenAI; frontend React + Vite + TypeScript.',
         tags: ['Python', 'FastAPI', 'SQLModel', 'ChromaDB', 'OpenAI', 'React', 'TypeScript', 'Vite', 'JWT', 'bcrypt'],
         repoUrl: 'https://github.com/EnzoLaTorre/rag-saas',
-        image: 'assets/rag-saas-dashboard.webp',
+        image: 'assets/sis-dashboard.webp',
         gradient: 'ia',
       },
   ],
