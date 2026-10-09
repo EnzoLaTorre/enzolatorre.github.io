@@ -38,7 +38,7 @@ window.PROJECTS_DATA = {
         repoUrl: 'https://github.com/EnzoLaTorre/gestor-tareas',
         image: 'assets/meepool-dashboard.webp',
         gradient: 'web',
-        demoUrl: 'https://meepool.onrender.com'
+        demoUrl: 'https://enzolatorre.github.io/gestor-tareas/'
       },
       {
         title: 'RAG SaaS — Chat con tus documentos',
