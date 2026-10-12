@@ -43,11 +43,11 @@ window.PROJECTS_DATA = {
       {
         title: 'RAG SaaS — Chat con tus documentos',
         description:
-          'Aplicación multi-tenant que indexa PDF, DOCX, TXT y responde con citas/fuentes usando RAG. Backend FastAPI + ChromaDB + OpenAI; frontend React + Vite + TypeScript.',
-        tags: ['Python', 'FastAPI', 'SQLModel', 'ChromaDB', 'OpenAI', 'React', 'TypeScript', 'Vite', 'JWT', 'bcrypt'],
+          'SaaS multi-tenant para chatear con tus documentos (PDF, DOCX, TXT): el backend FastAPI los indexa en PostgreSQL + pgvector y responde en streaming citando las fuentes exactas de cada afirmación. Proveedor de IA intercambiable: Gemini en la nube u Ollama local. Desplegado en Railway + Vercel, multi-usuario con JWT. Demo: entra con demo@example.com / demo1234.',
+        tags: ['Python', 'FastAPI', 'SQLModel', 'PostgreSQL', 'pgvector', 'React', 'TypeScript', 'Vite', 'Docker', 'Gemini', 'JWT', 'CI/CD'],
         repoUrl: 'https://github.com/EnzoLaTorre/rag-saas',
-        image: 'assets/sis-dashboard.webp',
-        gradient: 'ia',
+        demoUrl: 'https://rag-saas-psi.vercel.app',
+        image: 'assets/rag-saas-dashboard.webp',
       },
   ],
 };
